@@ -1,12 +1,17 @@
 package es.viajeselcaminito.generic;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Arrays;
 
+@JsonRootName("hotels")
 public class HotelGeneric {
 
     private String code;
     private String name;
     private String city;
+    @SerializedName("rooms")
     private RoomGeneric[] roomGenerics;
 
     public HotelGeneric() {
