@@ -1,12 +1,15 @@
 package es.viajeselcaminito.generic;
 
+import com.google.gson.annotations.SerializedName;
 import es.viajeselcaminito.utilities.MealPlan;
 import es.viajeselcaminito.utilities.RoomType;
 
 public class RoomGeneric {
 
     private String name;
+    @SerializedName(value="room_type")
     private RoomType roomType;
+    @SerializedName(value="meal_plan")
     private MealPlan mealPlan;
     private int price;
 
