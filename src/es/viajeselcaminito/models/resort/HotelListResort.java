@@ -1,4 +1,4 @@
-package es.viajeselcaminito.models;
+package es.viajeselcaminito.models.resort;
 
 import java.util.Arrays;
 
