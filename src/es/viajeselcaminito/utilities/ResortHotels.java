@@ -1,21 +1,19 @@
 package es.viajeselcaminito.utilities;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import es.viajeselcaminito.generic.HotelGeneric;
-import es.viajeselcaminito.generic.HotelListGeneric;
 import es.viajeselcaminito.generic.RoomGeneric;
-import es.viajeselcaminito.models.*;
+import es.viajeselcaminito.models.resort.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static es.viajeselcaminito.utilities.utils.getRoomType;
+import static es.viajeselcaminito.utilities.Utils.getRoomType;
 
 public class ResortHotels {
 
-    public static String getAllFromResort() throws IOException {
+    public static ArrayList<HotelGeneric> getAllFromResort() throws IOException {
         String urlGetHotelsResort = "http://www.mocky.io/v2/5e4e43272f00006c0016a52b";
         String urlGetRegimenResort = "http://www.mocky.io/v2/5e4a7dd02f0000290097d24b";
 
@@ -36,13 +34,7 @@ public class ResortHotels {
         ArrayList<HotelGeneric> hotelList = createHotelGeneric(hotels.getHotels());
         hotelList = asignMealPlanToHotel(hotelList, mealPlanListResort);
 
-        HotelListGeneric hotelListGeneric = new HotelListGeneric(hotelList.toArray(new HotelGeneric[0]));
-
-        Gson prettyHotels = new GsonBuilder()
-                .setPrettyPrinting()
-                .create();
-
-        return prettyHotels.toJson(hotelListGeneric);
+        return hotelList;
 
     }
 
