@@ -38,9 +38,11 @@ public class RoomGeneric {
     public void setRoomType(String roomType) {
         switch (roomType) {
             case "st":
+            case "standard":
                 this.roomType = RoomType.STANDARD;
                 break;
             case "su":
+            case "suite":
                 this.roomType = RoomType.SUITE;
                 break;
         }
